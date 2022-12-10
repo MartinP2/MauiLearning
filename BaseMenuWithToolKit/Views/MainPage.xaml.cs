@@ -1,4 +1,4 @@
-﻿namespace BaseMenuWithToolKit;
+﻿namespace BaseMenuWithToolKit.Views;
 
 public partial class MainPage : ContentPage
 {
