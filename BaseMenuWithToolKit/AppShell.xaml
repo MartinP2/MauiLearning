@@ -7,14 +7,35 @@
     FlyoutHeaderBehavior="CollapseOnScroll"
     Shell.FlyoutBehavior="Flyout">
 
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.2*,0.8*">
+                <Image Source="{Binding FlyoutIcon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
 
-
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="DarkSlateBlue">
+            <Label
+                TextColor="AntiqueWhite">Header</Label>
+            <!--<Image Source="moon.png"/>-->
+        </Grid>
+    </Shell.FlyoutHeader>
+    
+    
     <FlyoutItem Title="Home">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:Views.MainPage}"
             Route="MainPage" />
-        
+
     </FlyoutItem>
     <FlyoutItem Title="Tabs">
         <Tab Title="Page 1">
@@ -28,7 +49,7 @@
                 Title="Page 2"
                 ContentTemplate="{DataTemplate local:Views.NewPage2}"
                 Route="Page2" />
-            
+
         </Tab>
     </FlyoutItem>
 
